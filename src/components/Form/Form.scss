@@ -1,0 +1,25 @@
+.Form {
+    width: 45%;
+    .form-wrapper {
+        input {
+            display: block;
+            height: 32px;
+            border: 1px solid #d3d3d3;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            padding: 0 5px;
+            outline: none;
+            box-sizing: border-box;
+            &:not([type="radio"]) {
+                width: 100%;
+            }
+        }
+        .form-group {
+            display: flex;
+            label {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}
