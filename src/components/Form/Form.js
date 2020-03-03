@@ -57,7 +57,6 @@ export default class Form extends Component {
                                             value="male"
                                             checked={this.props.gender === "male"}
                                             onChange={this.props.handleChange}
-                                            required={true}
                                         />
                                         <span>Male</span>
                                     </label>
@@ -67,7 +66,6 @@ export default class Form extends Component {
                                             value="famale"
                                             checked={this.props.gender === "famale"}
                                             onChange={this.props.handleChange}
-                                            required={true}
                                         />
                                         <span>Famale</span>
                                     </label>

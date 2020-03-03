@@ -7,7 +7,6 @@ import Table from "./components/Table/Table";
 export default class App extends Component {
     constructor(props) {
         super(props);
-        const self = this;
         this.state = {
             form: {
                 first_name: "",
@@ -16,6 +15,7 @@ export default class App extends Component {
                 phone: "",
             },
             validete: false,
+            gender: "",
             errors: {}
         };
 
@@ -67,10 +67,13 @@ export default class App extends Component {
               errors = {};
         Object.entries(form).map((item) => {
             if(item[1].length < 2) errors[item[0]] = `${item[0].toLocaleUpperCase()} - Shouldn't be empty (min is 2 symbols)`;
+            if(this.state.gender === "") {
+                errors.gender = "FUCK";
+            }
         });
 
         if(Object.entries(errors).length === 0) {
-            this.setState({validate: true})
+            this.forceUpdate()
             localStorage.setItem('formData', JSON.stringify(form))
         }
         this.setState({
