@@ -73,10 +73,15 @@ export default class App extends Component {
             this.setState({validate: true})
             localStorage.setItem('formData', JSON.stringify(form))
         }
-
         this.setState({
             errors: errors
         });
+    }
+
+    removeItem(index) {
+        delete this.state.form[index]
+        localStorage.setItem('formData', JSON.stringify(this.state.form))
+        this.forceUpdate()
     }
 
     render() {
@@ -91,7 +96,8 @@ export default class App extends Component {
                               handleChange={this.handleChange}
                               handleSubmit={this.handleSubmit}/>
 
-                        <Table form={JSON.parse(localStorage.getItem('formData'))}/>
+                        <Table form={JSON.parse(localStorage.getItem('formData'))}
+                               remove={this.removeItem.bind(this)}/>
 
                     </div>
                 </div>

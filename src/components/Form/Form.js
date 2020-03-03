@@ -1,8 +1,6 @@
 import React, {Component} from "react";
 
 export default class Form extends Component {
-
-
     render() {
         const {
                 name,
@@ -14,7 +12,6 @@ export default class Form extends Component {
         return (
             <div className="Form">
                 <form>
-
                     <div className="row">
                         <form className="col s12">
                             {errorMsgs.map((error, i) => <div key={i} className="errors">{error}</div>)}
