@@ -14,7 +14,6 @@ export default class App extends Component {
                 age: "",
                 phone: "",
             },
-            validete: false,
             gender: "",
             errors: {}
         };
@@ -68,7 +67,7 @@ export default class App extends Component {
         Object.entries(form).map((item) => {
             if(item[1].length < 2) errors[item[0]] = `${item[0].toLocaleUpperCase()} - Shouldn't be empty (min is 2 symbols)`;
             if(this.state.gender === "") {
-                errors.gender = "FUCK";
+                errors.gender = "Choose Gender";
             }
         });
 
@@ -101,7 +100,6 @@ export default class App extends Component {
 
                         <Table form={JSON.parse(localStorage.getItem('formData'))}
                                remove={this.removeItem.bind(this)}/>
-
                     </div>
                 </div>
             </div>
